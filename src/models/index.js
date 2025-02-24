@@ -14,8 +14,15 @@ const skillsSchema = new mongoose.Schema({
   points: { type: Number, required: true },
 });
 
+const certificatesSchema = new mongoose.Schema({
+  name : {type: String, required: true},
+  url : {type: String, required: true},
+  date : {type: String, required: true}
+})
+
 // Create the model
 const Projects = mongoose.model("projectDetails", projectSchema);
 const Skills = mongoose.model("skills", skillsSchema);
+const Certificates = mongoose.model("certificates", certificatesSchema);
 
-module.exports = { Projects, Skills };
+module.exports = { Projects, Skills, Certificates };

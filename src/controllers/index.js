@@ -1,7 +1,7 @@
 // const ProjectDetails = require("../models/index");
 // const connectDB = require("../db/index");
 const nodemailer = require("nodemailer");
-const { Projects, Skills } = require("../models/index");
+const { Projects, Skills , Certificates} = require("../models/index");
 
 require("dotenv").config();
 
@@ -24,6 +24,16 @@ const getSkills = async (req, res) => {
     res.status(500).json({ message: "Error fetching data" });
   }
 };
+
+const getCertificates = async (req, res) => {
+  try{
+    const certificatez = await Certificates.find()
+    res.json({certificatez}).status(200)
+  } catch(e){
+    console.error("Error fetching certificates Data", e)
+    res.status(500).json({message: 'Error fetching data'})
+  }
+}
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -81,4 +91,4 @@ const sendEmail = async (req, res) => {
   }
 };
 
-module.exports = { getProjects, getSkills, sendEmail };
+module.exports = { getProjects, getSkills, getCertificates, sendEmail };
