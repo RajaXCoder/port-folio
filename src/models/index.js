@@ -10,15 +10,16 @@ const projectSchema = new mongoose.Schema({
 });
 
 const skillsSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  points: { type: Number, required: true },
+  frontend: [String],
+  backend: [String],
+  database: [String],
 });
 
 const certificatesSchema = new mongoose.Schema({
-  name : {type: String, required: true},
-  url : {type: String, required: true},
-  date : {type: String, required: true}
-})
+  name: { type: String, required: true },
+  url: { type: String, required: true },
+  date: { type: String, required: true },
+});
 
 // Create the model
 const Projects = mongoose.model("projectDetails", projectSchema);

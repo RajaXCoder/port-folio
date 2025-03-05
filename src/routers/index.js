@@ -9,6 +9,7 @@ router.get("/get-projects", (req, res) => {
   getProjects(req, res);
 });
 
+
 router.get("/get-skills", (req, res) => {
   console.log("GET /get-skills endpoints hit");
   getSkills(req, res);
