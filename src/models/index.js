@@ -11,8 +11,9 @@ const projectSchema = new mongoose.Schema({
 });
 
 const skillsSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  points: { type: Number, required: true },
+  frontend: [String],
+  backend: [String],
+  database: [String],
 });
 
 const certificatesSchema = new mongoose.Schema({

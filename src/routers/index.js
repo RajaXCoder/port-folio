@@ -8,7 +8,10 @@ const {
 
 const router = express.Router();
 
-router.get("/get-projects", getProjects);
+router.get("/get-projects", (req, res) => {
+  console.log("GET /get-projects endpoint hit");
+  getProjects(req, res);
+});
 
 router.get("/get-skills", getSkills);
 
