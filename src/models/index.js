@@ -1,5 +1,6 @@
 // models/Project.js
-const mongoose = require("../db/index");
+// const mongoose = require("../db/index");
+const mongoose = require("mongoose");
 
 // Define the schema
 const projectSchema = new mongoose.Schema({
@@ -15,10 +16,10 @@ const skillsSchema = new mongoose.Schema({
 });
 
 const certificatesSchema = new mongoose.Schema({
-  name : {type: String, required: true},
-  url : {type: String, required: true},
-  date : {type: String, required: true}
-})
+  name: { type: String, required: true },
+  url: { type: String, required: true },
+  date: { type: String, required: true },
+});
 
 // Create the model
 const Projects = mongoose.model("projectDetails", projectSchema);
