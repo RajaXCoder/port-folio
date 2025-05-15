@@ -1,5 +1,4 @@
 // models/Project.js
-// const mongoose = require("../db/index");
 const mongoose = require("mongoose");
 
 // Define the schema
